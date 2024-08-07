@@ -50,11 +50,17 @@ class Queue {
 
   /** peek(): return the value of the first node in the queue. */
 
-  peek() {}
+  peek() {
+    if (!this.first) throw new Error("Cannot peek from an empty queue");
+
+    return this.first.val;
+  }
 
   /** isEmpty(): return true if the queue is empty, otherwise false */
 
-  isEmpty() {}
+  isEmpty() {
+    return this.size === 0;
+  }
 }
 
 module.exports = Queue;
